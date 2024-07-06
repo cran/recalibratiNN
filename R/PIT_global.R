@@ -1,15 +1,23 @@
-
-#' Obtain the PIT-values of a model.
-#' @description
-#' A function to obtain the (possibly uncalibrated) PIT-values of any fitted model that
-#'assumes a normal distribution for the output, such as (but not limited to), a lm() or a neural network
-#'that used the Mean Squared Error as the loss function.
+#' Obtain the PIT-values of a Model
 #'
-#' @param ycal observations of the recalibration set
-#' @param yhat predictions of the recalibration set from the uncalibrated model
-#' @param mse Mean Squared Error of validation set.
-#' @return Vector of PIT-values
+#' @description
+#' A function to calculate the Probability Integral Transform (PIT) values for any fitted model
+#' that assumes a normal distribution of the output.
+#'
+#' @param ycal Numeric vector representing the true observations (y-values) of the response variable from the calibration dataset.
+#' @param yhat Numeric vector of predicted y-values on the calibration dataset.
+#' @param mse Mean Squared Error calculated from the calibration dataset.
+#' @return Returns a numeric vector of PIT-values.
 #' @export
+#'
+#' @details
+#'
+#' This function is designed to work with models that is, even implicitly, assuming normal distribution of the response variable.
+#' This includes, but is not limited to, linear models created using `lm()` or neural networks utilizing Mean Squared Error as the loss function.
+#' The OLS method is used to minimized residuals in these models. This mathematical optimization will also yield a probabilistic optimization
+#' when normal distribution of the response variable is assumed, since OLS and maximum likelihood estimation are equivalent under normality.
+#' Therefore, in order to render a probabilistic interpretation of the predictions, the model is intrinsically assuming a normal distribution of the response variable.
+#'
 #'
 #' @examples
 #' n <- 10000

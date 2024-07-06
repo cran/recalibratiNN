@@ -1,18 +1,27 @@
-#' Plots Cumulative Distributions of PIT-values for local calibration diagnose.
+#' Plots the cumulative distributions of PIT-values for local calibration diagnostics.
 #'
-#' @description
-#' ggplot to visualize predicted vs empirical cumulative distributions of PIT-values locally
+#'@description
 #'
-#' @param pit_local A data frame obtained from PIT_local_lm
-#' @param psz double that indicates size of the points that compose the lines.
-#' Default is 0.001
-#' @param pal Palette name from RColorBrewer. Default is "Set2'
-#' @param abline Color of horizontal line that indicates density 1. Default is"red"
-#' @param facet logical value in case separate visualization is preferred. Default is F
-#' @param ... Other parameters to pass ggplot
+#' This function generates a ggplot visual representation to compare the predicted versus empirical
+#' cumulative distributions of Probability Integral Transform (PIT) values at a local level. It is
+#' useful for diagnosing the calibration in different regions within the dataset, since miscalibration patterns may
+#' differ across the covariate space. The function allows for customization of the plot layers to suit specific needs.
+#' For advanced customization of the plot layers, refer to the ggplot2 User Guide.
 #'
-#' @return a ggplot graph
-#' @export
+#'@param pit_local A data frame of local PIT-values, typically obtained from `PIT_local()`.
+#'@param psz Double indicating the size of the points on the plot. Default is 0.001.
+#'@param pal Palette name from RColorBrewer for coloring the plot. Default is "Set2".
+#'@param abline Color of the diagonal line. Default color is "red".
+#'@param facet Logical value indicating if a separate visualization for each subgroup is preferred. Default is FALSE.
+#'@param ... Additional parameters to customize the ggplot.
+#'
+#'@return A `ggplot` object displaying the cumulative distributions of PIT-values that that can be customized as needed.
+#'
+#'@details
+#'
+#' This funcion will work with the output of the `PIT_local()` function, which provides the PIT-values for each subgroup pf the covariate space in the appropriate format.
+#'
+#'@export
 #'
 #' @examples
 #'
