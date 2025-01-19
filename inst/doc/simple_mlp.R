@@ -48,51 +48,51 @@ y_test  <- y[(split2*n+1):n]
 
 
 ## ----eval=F-------------------------------------------------------------------
-#  model_nn <- keras_model_sequential()
-#  
-#  model_nn |>
-#    layer_dense(input_shape=2,
-#                units=800,
-#                use_bias=T,
-#                activation = "relu",
-#                kernel_initializer="random_normal",
-#                bias_initializer = "zeros") %>%
-#    layer_dropout(rate = 0.1) %>%
-#    layer_dense(units=800,
-#                use_bias=T,
-#                activation = "relu",
-#                kernel_initializer="random_normal",
-#                bias_initializer = "zeros") |>
-#    layer_dropout(rate = 0.1) |>
-#    layer_dense(units=800,
-#                use_bias=T,
-#                activation = "relu",
-#                kernel_initializer="random_normal",
-#                bias_initializer = "zeros") |>
-#     layer_batch_normalization() |>
-#    layer_dense(units = 1,
-#                activation = "linear",
-#                kernel_initializer = "zeros",
-#                bias_initializer = "zeros")
-#  
-#  model_nn |>
-#    compile(optimizer=optimizer_adam( ),
-#      loss = "mse")
-#  
-#  model_nn |>
-#    fit(x = x_train,
-#        y = y_train,
-#        validation_data = list(x_cal, y_cal),
-#        callbacks = callback_early_stopping(
-#          monitor = "val_loss",
-#          patience = 20,
-#          restore_best_weights = T),
-#        batch_size = 128,
-#        epochs = 1000)
-#  
-#  
-#  y_hat_cal <- predict(model_nn, x_cal)
-#  y_hat_test <- predict(model_nn, x_test)
+# model_nn <- keras_model_sequential()
+# 
+# model_nn |>
+#   layer_dense(input_shape=2,
+#               units=800,
+#               use_bias=T,
+#               activation = "relu",
+#               kernel_initializer="random_normal",
+#               bias_initializer = "zeros") %>%
+#   layer_dropout(rate = 0.1) %>%
+#   layer_dense(units=800,
+#               use_bias=T,
+#               activation = "relu",
+#               kernel_initializer="random_normal",
+#               bias_initializer = "zeros") |>
+#   layer_dropout(rate = 0.1) |>
+#   layer_dense(units=800,
+#               use_bias=T,
+#               activation = "relu",
+#               kernel_initializer="random_normal",
+#               bias_initializer = "zeros") |>
+#    layer_batch_normalization() |>
+#   layer_dense(units = 1,
+#               activation = "linear",
+#               kernel_initializer = "zeros",
+#               bias_initializer = "zeros")
+# 
+# model_nn |>
+#   compile(optimizer=optimizer_adam( ),
+#     loss = "mse")
+# 
+# model_nn |>
+#   fit(x = x_train,
+#       y = y_train,
+#       validation_data = list(x_cal, y_cal),
+#       callbacks = callback_early_stopping(
+#         monitor = "val_loss",
+#         patience = 20,
+#         restore_best_weights = T),
+#       batch_size = 128,
+#       epochs = 1000)
+# 
+# 
+# y_hat_cal <- predict(model_nn, x_cal)
+# y_hat_test <- predict(model_nn, x_test)
 
 ## ----echo = F-----------------------------------------------------------------
 # carregar os vetores .rds
@@ -131,7 +131,7 @@ pit_local <- PIT_local(xcal = x_cal,
 gg_PIT_local(pit_local)
 
 ## -----------------------------------------------------------------------------
-gg_CD_local(pit_local)
+gg_CD_local(pit_local, mse = MSE_cal)
 
 ## -----------------------------------------------------------------------------
 coverage_model <- tibble(

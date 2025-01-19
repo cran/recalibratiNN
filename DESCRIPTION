@@ -1,6 +1,6 @@
 Package: recalibratiNN
 Title: Quantile Recalibration for Regression Models
-Version: 0.3.0
+Version: 0.3.2
 Authors@R: 
   c(person(given = "Carolina",
            family = "Musso",
@@ -37,7 +37,7 @@ Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-07-06 00:14:17 UTC; carolinamusso
+Packaged: 2025-01-19 21:47:38 UTC; carolinamusso
 Author: Carolina Musso [aut, cre, cph]
     (<https://orcid.org/0000-0002-8107-6458>),
   Ricardo Torres [aut, cph] (<https://orcid.org/0009-0000-9100-7125>),
@@ -47,4 +47,4 @@ Author: Carolina Musso [aut, cre, cph]
 Maintainer: Carolina Musso <cmusso86@gmail.com>
 Depends: R (>= 3.5.0)
 Repository: CRAN
-Date/Publication: 2024-07-06 02:10:02 UTC
+Date/Publication: 2025-01-19 22:10:02 UTC

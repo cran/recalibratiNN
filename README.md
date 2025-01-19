@@ -1,7 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# recalibratiNN <img src="man/figures/recalibratiNN.png" align="right" height="180" style="float:right; height:180px;">
+# recalibratiNN
+
+<img src="man/figures/recalibratiNN.png" align="right" height="180" style="float:right; height:180px;">
 
 <!-- badges: start -->
 
@@ -46,34 +48,6 @@ download.
 ``` r
 if(!require(pacman)) install.packages("pacman")
 pacman::p_load_current_gh("cmusso86/recalibratiNN")
-#> ps      (1.7.6 -> 1.7.7) [CRAN]
-#> yaml    (2.3.8 -> 2.3.9) [CRAN]
-#> pkgload (1.3.4 -> 1.4.0) [CRAN]
-#> 
-#> The downloaded binary packages are in
-#>  /var/folders/rp/h9_9qkdd7c57z9_hytk4306h0000gn/T//Rtmp7GFNRU/downloaded_packages
-#> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>      checking for file ‘/private/var/folders/rp/h9_9qkdd7c57z9_hytk4306h0000gn/T/Rtmp7GFNRU/remotesfcea18b61eda/cmusso86-recalibratiNN-986e90d/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/rp/h9_9qkdd7c57z9_hytk4306h0000gn/T/Rtmp7GFNRU/remotesfcea18b61eda/cmusso86-recalibratiNN-986e90d/DESCRIPTION’
-#>   ─  preparing ‘recalibratiNN’:
-#>    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-#>   ─  installing the package to process help pages
-#>      Loading required namespace: recalibratiNN
-#>   ─  saving partial Rd database
-#>   ─  checking for LF line-endings in source and make files and shell scripts
-#>   ─  checking for empty or unneeded directories
-#>        NB: this package now depends on R (>= 3.5.0)
-#>        WARNING: Added dependency on R >= 3.5.0 because serialized objects in
-#>      serialize/load version 3 cannot be read in older versions of R.
-#>      File(s) containing such objects:
-#>        ‘recalibratiNN/inst/extdata/mse_cal.rds’
-#>        ‘recalibratiNN/inst/extdata/y_hat_cal.rds’
-#>        ‘recalibratiNN/inst/extdata/y_hat_test.rds’
-#>        ‘recalibratiNN/vignettes/mse_cal.rds’
-#>        ‘recalibratiNN/vignettes/y_hat_cal.rds’
-#>        ‘recalibratiNN/vignettes/y_hat_test.rds’
-#>   ─  building ‘recalibratiNN_0.2.1.tar.gz’
-#>      
-#> 
 ```
 
 ## Understanding calibration/miscalibration
@@ -275,8 +249,8 @@ each section exhibits unique calibration needs.
 Alternatively you can observe the local miscalibration in the CD-graph.
 
 ``` r
-gg_CD_local(pit_local)
-gg_CD_local(pit_local, facet = T)
+gg_CD_local(pit_local, mse = MSE_cal)
+gg_CD_local(pit_local, mse = MSE_cal, facet = T)
 ```
 
 <img src="man/figures/plotQL1.png" width="80%" style="display: block; margin: auto;" /><img src="man/figures/plotQL2.png" width="80%" style="display: block; margin: auto;" />
